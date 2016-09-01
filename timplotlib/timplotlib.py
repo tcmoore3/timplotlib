@@ -11,9 +11,10 @@ def fancy_legend(ax, loc=0, fancybox=True, ec='#D3D3D3', lw=0.1):
     legend.legendPatch.set_edgecolor(ec)
     legend.legendPatch.set_lw(lw)
 
-def timize(ax, framecolor='#D3D3D3', tickcolor='#D3D3D3', legend_loc=0,
+def timize(ax, framecolor='#D3D3D3', tickcolor='#D3D3D3', legend=True, legend_loc=0,
         fancybox=True, legend_ec='#D3D3D3', legend_lw=0.1, grid=True):
     lighter_frame(ax, color=framecolor)
     lighter_ticks(ax, color=tickcolor)
-    fancy_legend(ax, loc=legend_loc, fancybox=fancybox, ec=legend_ec, lw=legend_lw)
+    if legend == True:
+        fancy_legend(ax, loc=legend_loc, fancybox=fancybox, ec=legend_ec, lw=legend_lw)
     ax.grid(grid)
