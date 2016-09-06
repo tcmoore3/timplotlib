@@ -7,7 +7,10 @@ def lighter_ticks(ax, color='#D3D3D3'):
     plt.setp([ax.get_xticklines(), ax.get_yticklines()], color='#D3D3D3')
 
 def fancy_legend(ax, loc=0, fancybox=True, ec='#D3D3D3', lw=0.1):
-    legend = ax.legend(loc=loc, fancybox=fancybox)
+    try:
+        legend = ax.legend(loc=loc, fancybox=fancybox)
+    except AttributeError:
+        return 
     legend.legendPatch.set_edgecolor(ec)
     legend.legendPatch.set_lw(lw)
 
