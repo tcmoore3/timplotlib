@@ -15,9 +15,11 @@ def fancy_legend(ax, loc=0, fancybox=True, ec='#D3D3D3', lw=0.1):
         return 
 
 def timize(ax, framecolor='#D3D3D3', tickcolor='#D3D3D3', legend=True, legend_loc=0,
-        fancybox=True, legend_ec='#D3D3D3', legend_lw=0.1, grid=True, frame_z='top'):
+        fancybox=True, legend_ec='#D3D3D3', legend_lw=0.1, grid=True, frame_z='top',
+        grid_zorder=0):
     lighter_frame(ax, color=framecolor, zorder=frame_z)
     lighter_ticks(ax, color=tickcolor)
     if legend == True:
         fancy_legend(ax, loc=legend_loc, fancybox=fancybox, ec=legend_ec, lw=legend_lw)
-    ax.grid(grid)
+    if grid == True:
+        ax.grid(grid, zorder=grid_zorder)
