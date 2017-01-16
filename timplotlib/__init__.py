@@ -1,1 +1,1 @@
-from timplotlib import *
+from timplotlib.timplotlib import *
